@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CascadiaCode-Regular:pixelsize=13:antialias=true:autohint=true";
+static char *font = "CascadiaCode-Regular:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -95,32 +95,37 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	[0] = "#000000", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	[1] = "#cc241d", /* red     */
-	[2] = "#98971a", /* green   */
-	[3] = "#d79921", /* yellow  */
-	[4] = "#458588", /* blue    */
-	[5] = "#b16286", /* magenta */
-	[6] = "#689d6a", /* cyan    */
-	[7] = "#ffffff", /* white   */
+  /* 8 normal colors */
+  [0] = "#161821", /* black   */
+  [1] = "#ff5454", /* red     */
+  [2] = "#8cc85f", /* green   */
+  [3] = "#e3c78a", /* yellow  */
+  [4] = "#80a0ff", /* blue    */
+  [5] = "#d183e8", /* magenta */
+  [6] = "#79dac8", /* cyan    */
+  [7] = "#eeeeee", /* white   */
 
-	/* 8 bright colors */
-	[8]  = "#928374", /* black   */
-	[9]  = "#fb4934", /* red     */
-	[10] = "#b8bb26", /* green   */
-	[11] = "#fabd2f", /* yellow  */
-	[12] = "#83a598", /* blue    */
-	[13] = "#d3869b", /* magenta */
-	[14] = "#66b3ff", /* cyan    */
-	[15] = "#ffffff", /* white   */
+  /* 8 bright colors */
+  [8]  = "#1c1c1c", /* black   */
+  [9]  = "#ff5189", /* red     */
+  [10] = "#36c692", /* green   */
+  [11] = "#bfbf97", /* yellow  */
+  [12] = "#74b2ff", /* blue    */
+  [13] = "#ae81ff", /* magenta */
+  [14] = "#85dc85", /* cyan    */
+  [15] = "#eeeeee", /* white   */
+
+  /* special colors */
+  [256] = "#070707", /* background */
+  [257] = "#d0d0d0", /* foreground */
 };
 
 /*
  *  * Default colors (colorname index)
  *   * foreground, background, cursor, reverse cursor
  *    */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
 static unsigned int defaultcs = 15;
 static unsigned int defaultrcs = 257;
 
